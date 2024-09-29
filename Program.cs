@@ -1,20 +1,24 @@
 ﻿Console.ForegroundColor = ConsoleColor.Green; 
-Console.WriteLine("Я вас любил еще, быть может..."); 
+Console.WriteLine("Ты всегда таинственный и новый..."); 
  
 Console.WriteLine(""); 
  
 Console.ForegroundColor = ConsoleColor.Yellow; 
-Console.WriteLine("Я вас любил: любовь еще быть может,"); 
-Console.WriteLine("В душе моей угасла не совсем"); 
-Console.WriteLine("Но пусть она вас больше не треожит;"); 
-Console.WriteLine("Я не хочу печалить вас ничем."); 
-Console.WriteLine ("Я вас любил безмолвно, безнадежно,"); 
-Console.WriteLine ("То с робостью, то с ревностью томим;"); 
-Console.WriteLine ("Я вас любил так искренно, так нежно,"); 
-Console.WriteLine ("Как дай вам Бог любимой быть дургим."); 
+Console.WriteLine("Ты всегда таинственный и новый,"); 
+Console.WriteLine("Я тебе послушней с кадждым днем,"); 
+Console.WriteLine("Но любовь твоя, о друг суровый,"); 
+Console.WriteLine("Испытание железом и огнем."); 
+Console.WriteLine ("Запрещаешь петь и улыбаться,"); 
+Console.WriteLine ("А молиться запретил давно.;"); 
+Console.WriteLine ("Только б мне с тобою не расстаться,"); 
+Console.WriteLine ("Остальное все равно!"); 
+Console.WriteLine ("Так, земле и небесам чужая,"); 
+Console.WriteLine ("Я живу и тбольше не пою,"); 
+Console.WriteLine ("Словно ты у ада и у рая"); 
+Console.WriteLine ("Отнял душу вольную мою."); 
  
 Console.WriteLine (""); 
  
 Console.ForegroundColor = ConsoleColor.Red; 
-Console.WriteLine ("А. С. Пушкин"); 
+Console.WriteLine ("Анна Ахматова"); 
 Console.ResetColor ();
