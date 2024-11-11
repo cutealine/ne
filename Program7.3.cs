@@ -1,5 +1,4 @@
-﻿
-namespace task7._3
+
 {
     internal class Program
     {
