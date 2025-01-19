@@ -1,18 +1,18 @@
-﻿using System;
-internal class Program{
-static void Main(string[] agrs){
-Console.WriteLine("Введите число x: ");
-var x = double.Parse(Console.ReadLine());
-
-var y = MyFuncion(x);
-Console.WriteLine("f(x) = " + y);
-
-Console.ReadKey();
-}
-
-static double MyFuncion(double x)
+﻿namespace Task_4
 {
-    //throw new NotImplementedException();
-    return Math.Sqrt((2*x + Math.Sin(3*x))/3.56);
-}
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите x: ");
+            var x = int.Parse(Console.ReadLine());
+            Console.WriteLine(F(x));
+            Console.ReadKey();
+        }
+
+        static double F(double x)
+        {
+            return Math.Sqrt(Math.Pow(2, Math.Pow(x, x)) + Math.Pow(x, Math.Pow(2, x)) + Math.Pow(x, Math.Pow(x, 2)));
+        }
+    }
 }
