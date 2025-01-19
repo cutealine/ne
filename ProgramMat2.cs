@@ -1,22 +1,29 @@
-﻿using System;
+using System;
 
-internal class Program
+namespace Task
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        Console.WriteLine("Введите трехзначное число:");
-        string input = Console.ReadLine();
-
-        if (input.Length == 3 && int.TryParse(input, out int number))
+        static void Main(string[] args)
         {
-            string result = input.Substring(1) + input[0];
-            Console.WriteLine("Полученное число: " + result);
-        }
-        else
-        {
-            Console.WriteLine("Пожалуйста, введите корректное трехзначное число.");
-        }
+            Console.WriteLine("Введите трёхзначное число:");
+            int A = Convert.ToInt32(Console.ReadLine());
 
-        Console.ReadKey();
+            if (A < 100 || A > 999)
+            {
+                Console.WriteLine("Ошибка: введите трёхзначное число.");
+                return;
+            }
+
+            int first = A / 100; 
+            int second = (A / 10) % 10; 
+            int third = A % 10; 
+
+        
+            int result = (second * 100) + (third * 10) + first;
+
+            Console.WriteLine($"Полученное число: {result}");
+            Console.ReadKey();
+        }
     }
 }
