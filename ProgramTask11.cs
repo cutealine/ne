@@ -1,4 +1,7 @@
-﻿   static void Main(string[] args)
+using System;
+integral class Program
+{
+        static void Main(string[] args)
         {
             Console.WriteLine("Введите небольшой текст (в одну строку): ");
             string input = Console.ReadLine();
@@ -57,3 +60,4 @@
         {
             return words.Select(word => new string(word.Reverse().ToArray()).ToLower()).ToArray();
         }
+}
