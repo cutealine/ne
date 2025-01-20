@@ -1,5 +1,6 @@
 ﻿using System;
-
+namespace project 
+{
 internal class Program
 {
     static void Main(string[] args)
@@ -15,4 +16,5 @@ internal class Program
         Console.WriteLine("Площадь поверхности тетраэдра: " + Math.Round(surfaceArea, 3));
         Console.ReadKey();
     }
+  }
 }
