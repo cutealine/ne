@@ -1,4 +1,6 @@
-﻿namespace Task_8
+using System;
+
+namespace project
 {
        internal class Program
        {
@@ -20,4 +22,5 @@
                else
                    return 0;
            }
-       }}
+       }
+}
