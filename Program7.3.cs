@@ -1,4 +1,7 @@
+using System;
 
+namespace project
+{
     internal class Program
     {
         static void Main(string[] args)
@@ -105,4 +108,5 @@
             y = position[1] - '0';
         }
     }
+}
 }
