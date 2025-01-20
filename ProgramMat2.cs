@@ -1,6 +1,6 @@
 using System;
 
-namespace Task
+namespace project
 {
     internal class Program
     {
