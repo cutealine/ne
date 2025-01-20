@@ -10,37 +10,50 @@ class Program
             { 4, 5, 6 },
             { 7, 8, 9 }
         };
-        Console.Write("Введите целое число: ");
-        int number = int.Parse(Console.ReadLine());
-        FindElementDivisibleByNumber(array, number);
-        CalculateEvenProductInColumns(array);
+        Console.Write("Введите целое число для проверки: ");
+        if (int.TryParse(Console.ReadLine(), out int divisor))
+        {
+            FindDivisibleElement(array, divisor);
+        }
+        else
+        {
+            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+        }
+
+        CalculateEvenProduct(array);
     }
-    static void FindElementDivisibleByNumber(int[,] array, int number)
+
+    static void FindDivisibleElement(int[,] array, int divisor)
     {
-        bool found = false;     
+        bool found = false;
+
         for (int i = 0; i < array.GetLength(0); i++)
         {
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                if (array[i, j] % number == 0)
+                if (array[i, j] % divisor == 0)
                 {
-                    Console.WriteLine($"Элемент, делящийся на {number}, найден на индексе: [{i}, {j}]");
+                    Console.WriteLine($"Элемент {array[i, j]} делится на {divisor} " +
+                                      $"находится по индексам: [{i}, {j}]");
                     found = true;
-                    return;
+                    return; 
                 }
             }
         }
+
         if (!found)
         {
-            Console.WriteLine($"Нет элементов, делящихся на {number}.");
+            Console.WriteLine($"В массиве нет элементов, делящихся на {divisor}.");
         }
     }
-    static void CalculateEvenProductInColumns(int[,] array)
+
+    static void CalculateEvenProduct(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             int product = 1;
             bool hasEven = false;
+
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 if (array[i, j] % 2 == 0)
@@ -49,13 +62,14 @@ class Program
                     hasEven = true;
                 }
             }
+
             if (hasEven)
             {
-                Console.WriteLine($"Столбец {j}: произведение четных элементов = {product}");
+                Console.WriteLine($"Произведение четных элементов столбца {j}: {product}");
             }
             else
             {
-                Console.WriteLine($"Столбец {j}: нет четных элементов.");
+                Console.WriteLine($"В столбце {j} нет четных элементов.");
             }
         }
     }
