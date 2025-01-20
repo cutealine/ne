@@ -12,14 +12,12 @@ class Program
         };
         Console.Write("Введите целое число: ");
         int number = int.Parse(Console.ReadLine());
-
         FindElementDivisibleByNumber(array, number);
-
         CalculateEvenProductInColumns(array);
     }
     static void FindElementDivisibleByNumber(int[,] array, int number)
     {
-        bool found = false;
+        bool found = false;     
         for (int i = 0; i < array.GetLength(0); i++)
         {
             for (int j = 0; j < array.GetLength(1); j++)
@@ -28,7 +26,8 @@ class Program
                 {
                     Console.WriteLine($"Элемент, делящийся на {number}, найден на индексе: [{i}, {j}]");
                     found = true;
-                    return;   }    
+                    return;
+                }
             }
         }
         if (!found)
@@ -60,4 +59,5 @@ class Program
             }
         }
     }
+}
 }
