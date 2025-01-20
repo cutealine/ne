@@ -1,4 +1,7 @@
 ﻿using System; 
+
+namespace project
+{
 internal class Program 
 { 
     static void Main(string[] args) 
@@ -40,4 +43,5 @@ internal class Program
         .Replace("Y", "'/") 
         .Replace("Z", "2"); 
     } 
+}
 }
