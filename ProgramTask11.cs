@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
-
+namespace project
+{
 class Program
 {
     static void Main(string[] args)
@@ -53,4 +54,5 @@ class Program
     {
         return array.Select(word => new string(word.Reverse().ToArray())).ToArray();
     }
+}
 }
