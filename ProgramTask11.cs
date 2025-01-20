@@ -1,59 +1,56 @@
-     static void Main(string[] args)
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введите текст:");
+        string input = Console.ReadLine();
+
+        string[] words = input
+            .Split(new char[] { ' ', '.', ',', '!', '?', ';', ':' }, StringSplitOptions.RemoveEmptyEntries)
+            .ToArray();
+
+        PrintArray(words);
+
+        CapitalizeFirstLetter(words);
+        Console.WriteLine("Слова с заглавной буквой:");
+        PrintArray(words);
+
+        double averageLength = CalculateAverageLength(words);
+        Console.WriteLine($"Средняя длина слов: {averageLength}");
+
+        string[] reversedWords = ReverseWords(words);
+        Console.WriteLine("Слова с изменённым порядком символов:");
+        PrintArray(reversedWords);
+    }
+    static void PrintArray(string[] array)
+    {
+        foreach (var item in array)
         {
-            Console.WriteLine("Введите небольшой текст (в одну строку): ");
-            string input = Console.ReadLine();
-
-            string[] words = input.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries)
-                                   .Select(word => new string(word.Where(char.IsLetterOrDigit).ToArray()))
-                                   .ToArray();
-
-            PrintWords(words);
-
-            CapitalizeFirstLetter(words);
-            Console.WriteLine("\nСлова с заглавной буквы:");
-            PrintWords(words);
-
-            double averageLength = CalculateAverageLength(words);
-            Console.WriteLine($"\nСредняя длина слов составляет: {averageLength}");
-
-            string[] reversedWords = ReversedWords(words);
-            Console.WriteLine("\nСлова с противоположным порядком символов: ");
-            PrintWords(reversedWords);
-
-            Console.ReadKey();
+            Console.WriteLine(item);
         }
-
-        static void PrintWords(string[] words)
+    }
+    static void CapitalizeFirstLetter(string[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
         {
-            foreach (var word in words)
-                Console.WriteLine(word);
-        }
-
-        static void CapitalizeFirstLetter(string[] words)
-        {
-            for (int i = 0; i < words.Length; i++)
+            if (!string.IsNullOrEmpty(array[i]))
             {
-                if (words[i].Length > 0)
-                {
-                    words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
-                }
+                array[i] = char.ToUpper(array[i][0]) + array[i].Substring(1);
             }
         }
-
-        static double CalculateAverageLength(string[] words)
-        {
-            if (words.Length == 0)
-                return 0;
-
-            int totalLength = 0;
-
-            foreach (var word in words)
-                totalLength += words.Length;
-
-            return (double)totalLength / words.Length;
-        }
-
-        static string[] ReversedWords(string[] words)
-        {
-            return words.Select(word => new string(word.Reverse().ToArray()).ToLower()).ToArray();
-        }
+    }
+    static double CalculateAverageLength(string[] array)
+    {
+        if (array.Length == 0) return 0;
+        
+        double totalLength = array.Sum(word => word.Length);
+        return totalLength / array.Length;
+    }
+    static string[] ReverseWords(string[] array)
+    {
+        return array.Select(word => new string(word.Reverse().ToArray())).ToArray();
+    }
+}
