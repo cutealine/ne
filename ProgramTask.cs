@@ -1,37 +1,39 @@
 using System;
 
-namespace project {
-class Program
+namespace Variant13
 {
-    static void Main()
+    class Program
     {
-        long sum = 0; 
-        for (int n = 2; n < 100000; n++) 
+        static void Main(string[] args)
         {
-            if (C(n) == 8)
-            {
-                sum += n;
-            }
-        }
-        Console.WriteLine("Сумма всех n < 100000 для которых C(n) = 8: " + sum);
-    }
+            int S = 0;
+            int L = 100000;
 
-    static int C(int n) 
-    {
-        int count = 0;
-        for (int m = 2; m < n; m++)
+            for (int n = 2; n < L; n++)
+            {
+                int c = C(n);
+
+                if (c == 8)
+                {
+                    S += n;
+                }
+            }
+
+            Console.WriteLine("Сумма всех n, для которых C(n) = 8 в пределах 100000: " + S);
+        }
+
+        static int C(int n)
         {
-            if (ModularCube(m, n) == 1)
-            {
-                count++;
-            }
-        }
-        return count; 
-    }
+            int count = 0;
 
-    static int ModularCube(int m, int n) 
-    {
-        return (m * m % n * m % n) % n;
+            for (int m = 2; m < n; m++)
+            {
+                if ((m * m * m) % n == 1)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
     }
-}
 }
