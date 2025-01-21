@@ -1,82 +1,37 @@
-﻿using System;
+using System;
 
-namespace _10_6
+namespace project {
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        long sum = 0; 
+        for (int n = 2; n < 100000; n++) 
         {
-            int n = 0;
-            if (!TryInputNumber("Введите число n (количество цифр):", out n))
+            if (C(n) == 8)
             {
-                Console.ReadKey();
-                return;
+                sum += n;
             }
-
-            if (n < 1)
-            {
-                Console.WriteLine("Число n должно быть натуральным.");
-                Console.ReadKey();
-                return;
-            }
-
-            int k = 0;
-            if (!TryInputNumber("Введите число k (сумма цифр):", out k))
-            {
-                Console.ReadKey();
-                return;
-            }
-
-            if (k < 1)
-            {
-                Console.WriteLine("Число k должно быть натуральным.");
-                Console.ReadKey();
-                return;
-            }
-
-            int counter = 0;
-
-            int start = (int)Math.Pow(10, n - 1);
-            int end = (int)Math.Pow(10, n);
-
-            for (int number = start; number < end; number++)
-            {
-                int temp = number;
-                int sum = 0;
-
-                while (temp > 0)
-                {
-                    sum += temp % 10;
-                    temp /= 10;
-                }
-
-                if (sum == k)
-                {
-                    Console.Write($"{number}, ");
-                    counter++;
-                }
-            }
-
-            if (counter == 0)
-                Console.WriteLine($"\nНет {n}-значных чисел с суммой цифр {k}.");
-            else
-                Console.WriteLine("\b\b "); 
-
-            Console.ReadKey();
         }
-
-        static bool TryInputNumber(string message, out int number)
-        {
-            Console.WriteLine(message);
-            string input = Console.ReadLine();
-
-            if (!int.TryParse(input, out number))
-            {
-                Console.WriteLine("Ошибка ввода. Введите корректное число.");
-                return false;
-            }
-
-            return true;
-        }
+        Console.WriteLine("Сумма всех n < 100000 для которых C(n) = 8: " + sum);
     }
+
+    static int C(int n) 
+    {
+        int count = 0;
+        for (int m = 2; m < n; m++)
+        {
+            if (ModularCube(m, n) == 1)
+            {
+                count++;
+            }
+        }
+        return count; 
+    }
+
+    static int ModularCube(int m, int n) 
+    {
+        return (m * m % n * m % n) % n;
+    }
+}
 }
