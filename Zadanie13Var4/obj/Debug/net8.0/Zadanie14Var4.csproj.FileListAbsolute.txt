@@ -1,0 +1,11 @@
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\bin\Debug\net8.0\Zadanie14Var4.deps.json
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\bin\Debug\net8.0\Zadanie14Var4.dll
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\bin\Debug\net8.0\Zadanie14Var4.pdb
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\Zadanie14Var4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\Zadanie14Var4.AssemblyInfoInputs.cache
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\Zadanie14Var4.AssemblyInfo.cs
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\Zadanie14Var4.csproj.CoreCompileInputs.cache
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\Zadanie14Var4.dll
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\refint\Zadanie14Var4.dll
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\Zadanie14Var4.pdb
+C:\Users\VulpesInculta\Desktop\progrev\Zadanie14Var4\Zadanie13Var4\obj\Debug\net8.0\ref\Zadanie14Var4.dll
